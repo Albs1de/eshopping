@@ -1,73 +1,64 @@
+import { useState } from "react";
 import ShoppingCard from "./ShoppingCard";
 
 const ShoppingCardList = () => {
-  const shoppingItems = [
+  const [shoppingItems, setShoppingItems] = useState([
     {
+      id: 1,
       title: "Shoes",
       description: "Nice shoes...",
-      onClick: () => {
-        console.log("Buy now");
-      },
     },
     {
+      id: 2,
       title: "Sunglasses",
       description: "Cool sunglasses...",
-      onClick: () => {
-        console.log("Buy now");
-      },
     },
     {
+      id: 3,
       title: "Shirt",
       description: "Nice shirt...",
-      onClick: () => {
-        console.log("Buy now");
-      },
     },
     {
+      id: 4,
       title: "Hat",
       description: "Nice hat...",
-      onClick: () => {
-        console.log("Buy now");
-      },
     },
     {
+      id: 5,
       title: "Socks",
       description: "Nice socks...",
-      onClick: () => {
-        console.log("Buy now");
-      },
     },
     {
+      id: 6,
       title: "Pants",
       description: "Nice pants...",
-      onClick: () => {
-        console.log("Buy now");
-      },
     },
     {
+      id: 7,
       title: "Jacket",
       description: "Nice jacket...",
-      onClick: () => {
-        console.log("Buy now");
-      },
     },
     {
+      id: 8,
       title: "Gloves",
       description: "Nice gloves...",
-      onClick: () => {
-        console.log("Buy now");
-      },
     },
-  ];
+  ]);
 
+  const handleClick = (itemTitle) => {
+    console.log(`Buy ${itemTitle} now`);
+  };
   return (
     <div>
       {shoppingItems.map((item) => {
-        <ShoppingCard
-          title={item.title}
-          description={item.description}
-          onClick={item.onClick}
-        />;
+        return (
+          <ShoppingCard
+            key={item.id}
+            title={item.title}
+            description={item.description}
+            onClick={() => handleClick(item.title)}
+          />
+        );
       })}
     </div>
   );
