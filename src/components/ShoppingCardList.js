@@ -65,25 +65,27 @@ const ShoppingCardList = () => {
     ]);
 
   return (
-    <div>
+    <div className="flex flex-wrap justify-center">
       {shoppingItems.map((item) => {
         return (
-          <ShoppingCard
-            key={item.id}
-            title={item.title}
-            description={item.description}
-            price={item.price}
-            count={item.count}
-            onClick={() =>
-              addToCart({
-                id: item.id,
-                title: item.title,
-                description: item.description,
-                price: item.price,
-                count: item.count,
-              })
-            }
-          />
+          <div className="sm:mx-1 sm:my-1">
+            <ShoppingCard
+              key={item.id}
+              title={item.title}
+              description={item.description}
+              price={item.price}
+              count={item.count}
+              onClick={() =>
+                addToCart({
+                  id: item.id,
+                  title: item.title,
+                  description: item.description,
+                  price: item.price,
+                  count: item.count,
+                })
+              }
+            />
+          </div>
         );
       })}
     </div>
