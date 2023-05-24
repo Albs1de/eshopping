@@ -56,7 +56,11 @@ const ShoppingCardList = () => {
             title={item.title}
             description={item.description}
             onClick={() =>
-              addToCart({ title: item.title, description: item.description })
+              addToCart({
+                id: item.id,
+                title: item.title,
+                description: item.description,
+              })
             }
           />
         );

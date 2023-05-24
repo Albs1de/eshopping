@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
-import ShoppingCard from "./ShoppingCard";
+import ShoppingCard from "../ShoppingCard";
 
 describe("ShoppingCard", () => {
   // Überprüft ob der Titel und die Beschreibung korrekt gerendert werden
