@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import ShoppingCard from "./ShoppingCard";
+import { CartContext } from "./ShoppingCardProvider";
 
 const ShoppingCardList = () => {
+  const { addToCart } = useContext(CartContext);
   const [shoppingItems, setShoppingItems] = useState([
     {
       id: 1,
@@ -45,9 +47,6 @@ const ShoppingCardList = () => {
     },
   ]);
 
-  const handleClick = (itemTitle) => {
-    console.log(`Buy ${itemTitle} now`);
-  };
   return (
     <div>
       {shoppingItems.map((item) => {
@@ -56,7 +55,9 @@ const ShoppingCardList = () => {
             key={item.id}
             title={item.title}
             description={item.description}
-            onClick={() => handleClick(item.title)}
+            onClick={() =>
+              addToCart({ title: item.title, description: item.description })
+            }
           />
         );
       })}
