@@ -67,9 +67,8 @@ const ShoppingCardList = () => {
     <div className="flex flex-wrap justify-center">
       {shoppingItems.map((item) => {
         return (
-          <div className="sm:mx-1 sm:my-1">
+          <div key={item.id} className="sm:mx-1 sm:my-1">
             <ShoppingCard
-              key={item.id}
               title={item.title}
               description={item.description}
               price={item.price}
