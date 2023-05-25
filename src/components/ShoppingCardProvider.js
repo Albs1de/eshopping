@@ -18,7 +18,11 @@ export const CartProvider = ({ children }) => {
       setCartItem(
         cartItem.map((cartItem) =>
           cartItem.id === item.id
-            ? { ...cartItem, count: cartItem.count + 1 }
+            ? {
+                ...cartItem,
+                count: cartItem.count + 1,
+                price: cartItem.price + cartItem.originalPrice,
+              }
             : cartItem
         )
       );

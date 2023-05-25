@@ -7,8 +7,9 @@ const ShoppingCard = ({ title, description, price, count, onClick }) => {
       <div className="card-body">
         <h2 className="card-title">{title}</h2>
         <p>{description}</p>
-        <p>{price} €</p>
         <p> Anzahl: {count}</p>
+        <p>{price} €</p>
+
         <div className="card-actions justify-end">
           <button className="btn btn-primary" onClick={onClick}>
             Buy now

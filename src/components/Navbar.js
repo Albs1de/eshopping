@@ -42,7 +42,8 @@ const Navbar = () => {
                   <div key={index}>
                     <span className="font-bold text-lg">{item.title}</span>
                     <p>{item.description}</p>
-                    <p> ANzahl: {item.count}</p>
+                    <p> Anzahl: {item.count}</p>
+                    <p> Preis: {item.price}€</p>
                   </div>
                 );
               })}
