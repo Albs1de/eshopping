@@ -77,6 +77,7 @@ const ShoppingCardList = () => {
         return (
           <div key={item.id} className="sm:mx-1 sm:my-1">
             <ShoppingCard
+              id={item.id}
               title={item.title}
               description={item.description}
               price={item.price}
