@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { CartContext } from "./ShoppingCardProvider";
 const Navbar = () => {
-  const { cartItem } = useContext(CartContext);
+  const { cartItem, countAmount } = useContext(CartContext);
 
   return (
     <div className="navbar bg-base-100">
@@ -27,7 +27,7 @@ const Navbar = () => {
                 />
               </svg>
               <span className="badge badge-sm indicator-item">
-                {cartItem.length}
+                {countAmount}
               </span>
             </div>
           </label>
@@ -36,7 +36,7 @@ const Navbar = () => {
             className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow"
           >
             <div className="card-body">
-              <span className="font-bold text-lg">{cartItem.length} Items</span>
+              <span className="font-bold text-lg">{countAmount} Items</span>
               {cartItem.map((item, index) => {
                 return (
                   <div key={index}>
