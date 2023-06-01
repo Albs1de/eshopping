@@ -47,7 +47,7 @@ const Navbar = () => {
                   </div>
                 );
               })}
-              <span className="text-info">Subtotal: $999</span>
+              <span className="text-info">Subtotal: €</span>
               <div className="card-actions">
                 <button className="btn btn-primary btn-block">View cart</button>
               </div>
