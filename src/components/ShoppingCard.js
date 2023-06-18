@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { CartContext } from "./ShoppingCardProvider";
-
-const ShoppingCard = ({ title, description, price, id, onClick }) => {
+const ShoppingCard = ({ title, description, price, id, onClick, image }) => {
   const { cartItem } = useContext(CartContext);
 
   // Finden Sie die Anzahl des Artikels im Warenkorb
@@ -10,7 +9,7 @@ const ShoppingCard = ({ title, description, price, id, onClick }) => {
   return (
     <div className="card w-full mx-0.5 sm:w-96 bg-base-100 shadow-xl">
       <figure>
-        <img className="" src="/shoes.jpg" alt="Shoes" />
+        <img className="w-96 h-96 object-hover" src={image} alt="Shoes" />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{title}</h2>

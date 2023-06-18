@@ -1,6 +1,14 @@
 import { useState, useContext } from "react";
 import ShoppingCard from "./ShoppingCard";
 import { CartContext } from "./ShoppingCardProvider";
+import shoesImage from "../assets/shoes.jpg";
+import glovesImage from "../assets/gloves.jpg";
+import jacketImage from "../assets/jacket.jpg";
+import pantsImage from "../assets/pants.jpg";
+import socksImage from "../assets/socks.jpg";
+import sunglassesImage from "../assets/sunglasses.jpg";
+import tshirtImage from "../assets/tshirt.jpg";
+import hatImage from "../assets/hat.jpg";
 
 const ShoppingCardList = () => {
   const { addToCart } = useContext(CartContext);
@@ -12,6 +20,7 @@ const ShoppingCardList = () => {
       originalPrice: 25,
       price: 25,
       count: 0,
+      image: shoesImage,
     },
     {
       id: 2,
@@ -20,6 +29,7 @@ const ShoppingCardList = () => {
       originalPrice: 50,
       price: 50,
       count: 0,
+      image: sunglassesImage,
     },
     {
       id: 3,
@@ -28,6 +38,7 @@ const ShoppingCardList = () => {
       originalPrice: 75,
       price: 75,
       count: 0,
+      image: tshirtImage,
     },
     {
       id: 4,
@@ -36,6 +47,7 @@ const ShoppingCardList = () => {
       originalPrice: 100,
       price: 100,
       count: 0,
+      image: hatImage,
     },
     {
       id: 5,
@@ -44,6 +56,7 @@ const ShoppingCardList = () => {
       originalPrice: 125,
       price: 125,
       count: 0,
+      image: socksImage,
     },
     {
       id: 6,
@@ -52,6 +65,7 @@ const ShoppingCardList = () => {
       originalPrice: 150,
       price: 150,
       count: 0,
+      image: pantsImage,
     },
     {
       id: 7,
@@ -60,6 +74,7 @@ const ShoppingCardList = () => {
       originalPrice: 25,
       price: 25,
       count: 0,
+      image: jacketImage,
     },
     {
       id: 8,
@@ -68,6 +83,7 @@ const ShoppingCardList = () => {
       originalPrice: 175,
       price: 175,
       count: 0,
+      image: glovesImage,
     },
   ]);
 
@@ -111,6 +127,7 @@ const ShoppingCardList = () => {
                 description={item.description}
                 price={item.price}
                 count={item.count}
+                image={item.image}
                 onClick={() =>
                   addToCart({
                     id: item.id,
@@ -119,6 +136,7 @@ const ShoppingCardList = () => {
                     price: item.price,
                     count: item.count,
                     originalPrice: item.originalPrice,
+                    image: item.image,
                   })
                 }
               />
