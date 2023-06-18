@@ -4,7 +4,7 @@ import { CartContext } from "./ShoppingCardProvider";
 
 const ShoppingCardList = () => {
   const { addToCart } = useContext(CartContext);
-  const [shoppingItems] = useState([
+  const [shoppingItems, setShoppingItems] = useState([
     {
       id: 1,
       title: "Shoes",
@@ -71,31 +71,61 @@ const ShoppingCardList = () => {
     },
   ]);
 
+  const sortItemsFromAtoZ = () => {
+    const newSortedItems = [...shoppingItems].sort((a, b) =>
+      a.title.localeCompare(b.title)
+    );
+    setShoppingItems(newSortedItems);
+  };
+
+  const sortItemsFromZtoA = () => {
+    const newSortedItems = [...shoppingItems].sort((a, b) =>
+      b.title.localeCompare(a.title)
+    );
+    setShoppingItems(newSortedItems);
+  };
+
   return (
     <div className="flex flex-wrap justify-center">
-      {shoppingItems.map((item) => {
-        return (
-          <div key={item.id} className="sm:mx-1 sm:my-1">
-            <ShoppingCard
-              id={item.id}
-              title={item.title}
-              description={item.description}
-              price={item.price}
-              count={item.count}
-              onClick={() =>
-                addToCart({
-                  id: item.id,
-                  title: item.title,
-                  description: item.description,
-                  price: item.price,
-                  count: item.count,
-                  originalPrice: item.originalPrice,
-                })
-              }
-            />
-          </div>
-        );
-      })}
+      <div>
+        <button
+          className="btn-sort btn-outline btn-primary m-2"
+          onClick={sortItemsFromAtoZ}
+        >
+          Sort Items from A to Z
+        </button>
+        <button
+          className="btn-sort  btn-accent btn-outline"
+          onClick={sortItemsFromZtoA}
+        >
+          Sort Items from Z to A
+        </button>
+      </div>
+      <div className="flex flex-wrap justify-center">
+        {shoppingItems.map((item) => {
+          return (
+            <div key={item.id} className="sm:mx-1 sm:my-1">
+              <ShoppingCard
+                id={item.id}
+                title={item.title}
+                description={item.description}
+                price={item.price}
+                count={item.count}
+                onClick={() =>
+                  addToCart({
+                    id: item.id,
+                    title: item.title,
+                    description: item.description,
+                    price: item.price,
+                    count: item.count,
+                    originalPrice: item.originalPrice,
+                  })
+                }
+              />
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
