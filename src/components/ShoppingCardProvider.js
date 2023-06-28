@@ -9,7 +9,7 @@ export const CartProvider = ({ children }) => {
 
   const totalPriceInCart = () => {
     const totalPrice = cartItem.reduce(
-      (accumulator, item) => accumulator + item.count * item.price,
+      (accumulator, item) => accumulator + item.price,
       0
     );
 

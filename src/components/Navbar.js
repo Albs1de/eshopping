@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { CartContext } from "./ShoppingCardProvider";
 const Navbar = () => {
-  const { cartItem, countAmount } = useContext(CartContext);
+  const { cartItem, countAmount, totalPrice } = useContext(CartContext);
 
   return (
     <div className="navbar bg-base-100">
@@ -47,7 +47,7 @@ const Navbar = () => {
                   </div>
                 );
               })}
-              <span className="text-info">Subtotal: €</span>
+              <span className="text-info">Subtotal: {totalPrice} €</span>
               <div className="card-actions">
                 <button className="btn btn-primary btn-block">View cart</button>
               </div>
