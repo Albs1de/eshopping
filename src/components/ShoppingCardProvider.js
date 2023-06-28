@@ -1,10 +1,26 @@
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cartItem, setCartItem] = useState([]);
   const [countAmount, setCountAmount] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  const totalPriceInCart = () => {
+    const totalPrice = cartItem.reduce(
+      (accumulator, item) => accumulator + item.count * item.price,
+      0
+    );
+
+    setTotalPrice(totalPrice);
+  };
+
+  // Update den Gesamtpreis, wenn sich cartItem verändert
+  useEffect(() => {
+    totalPriceInCart();
+  }, [cartItem]);
+
   const addToCart = (item) => {
     // Wenn das Element sich noch nicht in Carts-Dropdown befindet hinzufügen, ansonsten nicht
     const isItemInCart = cartItem.some((cartItem) => cartItem.id === item.id);
@@ -30,7 +46,9 @@ export const CartProvider = ({ children }) => {
     }
   };
   return (
-    <CartContext.Provider value={{ cartItem, addToCart, countAmount }}>
+    <CartContext.Provider
+      value={{ cartItem, addToCart, countAmount, totalPrice }}
+    >
       {children}
     </CartContext.Provider>
   );
