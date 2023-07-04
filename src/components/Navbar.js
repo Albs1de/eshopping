@@ -1,13 +1,22 @@
 import { useContext } from "react";
 import { CartContext } from "./ShoppingCardProvider";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const { cartItem, countAmount, totalPrice } = useContext(CartContext);
 
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1">
-        <button className="btn btn-ghost normal-case text-xl">eShopping</button>
+        <Link to="/" className="btn btn-ghost normal-case text-xl">
+          eShopping
+        </Link>
       </div>
+      <div className="flex-1">
+        <Link to="/mylist" className="btn btn-ghost normal-case text-xl">
+          MyList
+        </Link>
+      </div>
+      <div className="flex-1"></div>
       <div className="flex-none">
         <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle ">
