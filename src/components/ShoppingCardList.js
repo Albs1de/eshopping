@@ -101,6 +101,20 @@ const ShoppingCardList = () => {
     setShoppingItems(newSortedItems);
   };
 
+  const sortItemsPriceXtoY = () => {
+    const newSortedItems = [...shoppingItems].sort((a, b) => {
+      return a.price - b.price;
+    });
+    setShoppingItems(newSortedItems);
+  };
+
+  const sortItemsPriceYtoA = () => {
+    const newSortedItems = [...shoppingItems].sort((a, b) => {
+      return b.price - a.price;
+    });
+    setShoppingItems(newSortedItems);
+  };
+
   return (
     <div className="flex flex-wrap justify-center">
       <div>
@@ -115,6 +129,18 @@ const ShoppingCardList = () => {
           onClick={sortItemsFromZtoA}
         >
           Sort Items from Z to A
+        </button>
+        <button
+          className="btn-sort  btn-accent btn-outline"
+          onClick={sortItemsPriceXtoY}
+        >
+          Sort Items price X to Y
+        </button>
+        <button
+          className="btn-sort  btn-accent btn-outline"
+          onClick={sortItemsPriceYtoA}
+        >
+          Sort Items price Y to X
         </button>
       </div>
       <div className="flex flex-wrap justify-center">
