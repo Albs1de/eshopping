@@ -7,18 +7,13 @@ export const CartProvider = ({ children }) => {
   const [countAmount, setCountAmount] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
 
-  const totalPriceInCart = () => {
+  // Update den Gesamtpreis, wenn sich cartItem verändert
+  useEffect(() => {
     const totalPrice = cartItem.reduce(
       (accumulator, item) => accumulator + item.price,
       0
     );
-
     setTotalPrice(totalPrice);
-  };
-
-  // Update den Gesamtpreis, wenn sich cartItem verändert
-  useEffect(() => {
-    totalPriceInCart();
   }, [cartItem]);
 
   const addToCart = (item) => {

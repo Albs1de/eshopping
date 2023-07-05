@@ -16,9 +16,6 @@ function App() {
             <Route path="/" element={<Homepage />} />
             <Route path="/mylist" element={<MyList />} />
           </Routes>
-
-          <Homepage />
-          <ShoppingCardList />
         </ListProvider>
       </CartProvider>
     </BrowserRouter>

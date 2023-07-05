@@ -9,7 +9,7 @@ import socksImage from "../assets/socks.jpg";
 import sunglassesImage from "../assets/sunglasses.jpg";
 import tshirtImage from "../assets/tshirt.jpg";
 import hatImage from "../assets/hat.jpg";
-import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { AiOutlineHeart } from "react-icons/ai";
 
 const ShoppingCardList = () => {
   const { addToCart } = useContext(CartContext);

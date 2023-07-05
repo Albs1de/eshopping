@@ -1,7 +1,9 @@
 import { useContext } from "react";
-import { CartContext } from "./ShoppingCardProvider";
-import { AiOutlineHeart } from "react-icons/ai";
-import { ListContext } from "./MyListProvider";
+import { CartContext } from "./ShoppingCardProvider"; // Context für den Einkaufswagen
+import { ListContext } from "./MyListProvider"; // Context für die persönliche Liste
+
+// Dies ist die Komponente für einzelne Shopping Cards, die in der ShoppingCardList angezeigt werden.
+// Sie nimmt verschiedene Props an, darunter title, description, price, id usw.
 const ShoppingCard = ({
   title,
   description,
@@ -11,14 +13,16 @@ const ShoppingCard = ({
   image,
   icon,
 }) => {
-  const { cartItem } = useContext(CartContext);
-  const { listItems, addToList } = useContext(ListContext);
+  const { cartItem } = useContext(CartContext); // Zugriff auf den Warenkorb über den Context
+  const { addToList } = useContext(ListContext); // Zugriff auf die persönliche Liste über den Context
 
   // Finden Sie die Anzahl des Artikels im Warenkorb
   const countInCart = cartItem.find((item) => item.id === id)?.count || 0;
 
+  // Die Rückgabefunktion rendert die ShoppingCard Komponente mit den übergebenen Daten.
   return (
     <div className="card w-full mx-0.5 sm:w-96 bg-base-100 shadow-xl">
+      {/* Hier werden das Bild und der Titel des Artikels angezeigt */}
       <figure>
         <img className="w-96 h-96 object-hover" src={image} alt="Shoes" />
       </figure>
@@ -28,6 +32,7 @@ const ShoppingCard = ({
         <p> Anzahl: {countInCart}</p>
         <p>{price} €</p>
         <div>
+          {/* Button zum Hinzufügen des Artikels zur persönlichen Liste */}
           <button
             className="btn btn-square"
             onClick={() =>
@@ -37,6 +42,7 @@ const ShoppingCard = ({
             Add to MyList
           </button>
         </div>
+        {/* Button zum Kaufen / Hinzufügen des Artikels zum Warenkorb */}
         <div className="card-actions justify-end">
           <button className="btn btn-primary" onClick={onClick}>
             Buy now
