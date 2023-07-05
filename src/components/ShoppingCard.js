@@ -1,7 +1,18 @@
 import { useContext } from "react";
 import { CartContext } from "./ShoppingCardProvider";
-const ShoppingCard = ({ title, description, price, id, onClick, image }) => {
+import { AiOutlineHeart } from "react-icons/ai";
+import { ListContext } from "./MyListProvider";
+const ShoppingCard = ({
+  title,
+  description,
+  price,
+  id,
+  onClick,
+  image,
+  icon,
+}) => {
   const { cartItem } = useContext(CartContext);
+  const { listItems, addToList } = useContext(ListContext);
 
   // Finden Sie die Anzahl des Artikels im Warenkorb
   const countInCart = cartItem.find((item) => item.id === id)?.count || 0;
@@ -16,7 +27,16 @@ const ShoppingCard = ({ title, description, price, id, onClick, image }) => {
         <p>{description}</p>
         <p> Anzahl: {countInCart}</p>
         <p>{price} €</p>
-
+        <div>
+          <button
+            className="btn btn-square"
+            onClick={() =>
+              addToList({ title, description, price, id, onClick, image })
+            }
+          >
+            Add to MyList
+          </button>
+        </div>
         <div className="card-actions justify-end">
           <button className="btn btn-primary" onClick={onClick}>
             Buy now

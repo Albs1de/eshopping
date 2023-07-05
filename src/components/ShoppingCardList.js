@@ -9,9 +9,11 @@ import socksImage from "../assets/socks.jpg";
 import sunglassesImage from "../assets/sunglasses.jpg";
 import tshirtImage from "../assets/tshirt.jpg";
 import hatImage from "../assets/hat.jpg";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 
 const ShoppingCardList = () => {
   const { addToCart } = useContext(CartContext);
+
   const [shoppingItems, setShoppingItems] = useState([
     {
       id: 1,
@@ -21,6 +23,7 @@ const ShoppingCardList = () => {
       price: 25,
       count: 0,
       image: shoesImage,
+      icon: AiOutlineHeart,
     },
     {
       id: 2,
@@ -30,6 +33,7 @@ const ShoppingCardList = () => {
       price: 50,
       count: 0,
       image: sunglassesImage,
+      icon: AiOutlineHeart,
     },
     {
       id: 3,
@@ -39,6 +43,7 @@ const ShoppingCardList = () => {
       price: 75,
       count: 0,
       image: tshirtImage,
+      icon: AiOutlineHeart,
     },
     {
       id: 4,
@@ -48,6 +53,7 @@ const ShoppingCardList = () => {
       price: 100,
       count: 0,
       image: hatImage,
+      icon: AiOutlineHeart,
     },
     {
       id: 5,
@@ -57,6 +63,7 @@ const ShoppingCardList = () => {
       price: 125,
       count: 0,
       image: socksImage,
+      icon: AiOutlineHeart,
     },
     {
       id: 6,
@@ -66,6 +73,7 @@ const ShoppingCardList = () => {
       price: 150,
       count: 0,
       image: pantsImage,
+      icon: AiOutlineHeart,
     },
     {
       id: 7,
@@ -75,6 +83,7 @@ const ShoppingCardList = () => {
       price: 25,
       count: 0,
       image: jacketImage,
+      icon: AiOutlineHeart,
     },
     {
       id: 8,
@@ -84,6 +93,7 @@ const ShoppingCardList = () => {
       price: 175,
       count: 0,
       image: glovesImage,
+      icon: AiOutlineHeart,
     },
   ]);
 
@@ -143,6 +153,7 @@ const ShoppingCardList = () => {
           Sort Items price Y to X
         </button>
       </div>
+
       <div className="flex flex-wrap justify-center">
         {shoppingItems.map((item) => {
           return (
@@ -154,6 +165,7 @@ const ShoppingCardList = () => {
                 price={item.price}
                 count={item.count}
                 image={item.image}
+                icon={item.icon}
                 onClick={() =>
                   addToCart({
                     id: item.id,
@@ -163,6 +175,7 @@ const ShoppingCardList = () => {
                     count: item.count,
                     originalPrice: item.originalPrice,
                     image: item.image,
+                    icon: item.icon,
                   })
                 }
               />
