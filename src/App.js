@@ -5,7 +5,7 @@ import { CartProvider } from "./components/ShoppingCardProvider";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MyList from "./pages/MyList";
 import { ListProvider } from "./components/MyListProvider";
-import ShoppingCardList from "./components/ShoppingCardList";
+
 function App() {
   return (
     <BrowserRouter>
