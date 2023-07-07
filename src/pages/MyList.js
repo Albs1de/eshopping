@@ -4,7 +4,7 @@ import ShoppingCard from "../components/ShoppingCard";
 import { CartContext } from "../components/ShoppingCardProvider";
 const MyList = () => {
   const { listItems } = useContext(ListContext);
-  const { addToCart } = useContext(CartContext);
+  const { addToCart, countItems } = useContext(CartContext);
 
   return (
     <div>
@@ -17,7 +17,7 @@ const MyList = () => {
               title={item.title}
               description={item.description}
               price={item.price}
-              count={item.count}
+              count={item.countItems}
               image={item.image}
               icon={item.icon}
               onClick={() =>
@@ -30,6 +30,7 @@ const MyList = () => {
                   originalPrice: item.originalPrice,
                   image: item.image,
                   icon: item.icon,
+                  booleanMyList: item.booleanMyList,
                 })
               }
             />

@@ -14,10 +14,13 @@ const ShoppingCard = ({
   icon,
 }) => {
   const { cartItem } = useContext(CartContext); // Zugriff auf den Warenkorb über den Context
-  const { addToList } = useContext(ListContext); // Zugriff auf die persönliche Liste über den Context
+  const { addToList, listItems } = useContext(ListContext); // Zugriff auf die persönliche Liste über den Context
 
   // Finden Sie die Anzahl des Artikels im Warenkorb
   const countInCart = cartItem.find((item) => item.id === id)?.count || 0;
+
+  // Prüfen ob das Element bereits in der Liste ist um dann später den button zu de/aktivieren
+  const isInList = listItems.find((item) => item.id === id);
 
   // Die Rückgabefunktion rendert die ShoppingCard Komponente mit den übergebenen Daten.
   return (
@@ -29,12 +32,15 @@ const ShoppingCard = ({
       <div className="card-body">
         <h2 className="card-title">{title}</h2>
         <p>{description}</p>
-        <p> Anzahl: {countInCart}</p>
+
+        <p>Anzahl: {countInCart}</p>
+
         <p>{price} €</p>
         <div>
           {/* Button zum Hinzufügen des Artikels zur persönlichen Liste */}
           <button
             className="btn btn-square"
+            disabled={isInList}
             onClick={() =>
               addToList({ title, description, price, id, onClick, image })
             }

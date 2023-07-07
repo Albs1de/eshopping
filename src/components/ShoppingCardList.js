@@ -24,6 +24,7 @@ const ShoppingCardList = () => {
       count: 0,
       image: shoesImage,
       icon: AiOutlineHeart,
+      booleanMyList: false,
     },
     {
       id: 2,
@@ -33,6 +34,7 @@ const ShoppingCardList = () => {
       price: 50,
       count: 0,
       image: sunglassesImage,
+      booleanMyList: false,
       icon: AiOutlineHeart,
     },
     {
@@ -44,6 +46,7 @@ const ShoppingCardList = () => {
       count: 0,
       image: tshirtImage,
       icon: AiOutlineHeart,
+      booleanMyList: false,
     },
     {
       id: 4,
@@ -54,6 +57,7 @@ const ShoppingCardList = () => {
       count: 0,
       image: hatImage,
       icon: AiOutlineHeart,
+      booleanMyList: false,
     },
     {
       id: 5,
@@ -64,6 +68,7 @@ const ShoppingCardList = () => {
       count: 0,
       image: socksImage,
       icon: AiOutlineHeart,
+      booleanMyList: false,
     },
     {
       id: 6,
@@ -74,6 +79,7 @@ const ShoppingCardList = () => {
       count: 0,
       image: pantsImage,
       icon: AiOutlineHeart,
+      booleanMyList: false,
     },
     {
       id: 7,
@@ -84,6 +90,7 @@ const ShoppingCardList = () => {
       count: 0,
       image: jacketImage,
       icon: AiOutlineHeart,
+      booleanMyList: false,
     },
     {
       id: 8,
@@ -94,6 +101,7 @@ const ShoppingCardList = () => {
       count: 0,
       image: glovesImage,
       icon: AiOutlineHeart,
+      booleanMyList: false,
     },
   ]);
 
