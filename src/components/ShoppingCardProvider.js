@@ -47,7 +47,6 @@ export const CartProvider = ({ children }) => {
         addToCart,
         countAmount,
         totalPrice,
-        countAmount,
         setCountAmount,
       }}
     >

@@ -4,7 +4,7 @@ import ShoppingCard from "../components/ShoppingCard";
 import { CartContext } from "../components/ShoppingCardProvider";
 const MyList = () => {
   const { listItems } = useContext(ListContext);
-  const { addToCart, countItems } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
 
   return (
     <div>

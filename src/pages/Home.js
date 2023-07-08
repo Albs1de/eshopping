@@ -9,7 +9,7 @@ const Homepage = () => {
     <div className="bg-gray-200 p-10 flex flex-col items-center">
       {!showShoppingList && (
         <>
-          <img alt="first Image" src={firstImage} className="mx-auto" />
+          <img alt="first Clothing" src={firstImage} className="mx-auto" />
           <h1 className="text-xl font-bold my-4">Willkommen auf eShopping</h1>
           <h2 className="text-lg my-2">Wir verkaufen hochwertige Kleidung</h2>
           <p className="text-base my-2">
