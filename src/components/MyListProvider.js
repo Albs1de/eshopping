@@ -5,6 +5,7 @@ export const ListContext = createContext();
 export const ListProvider = ({ children }) => {
   const [listItems, setListItems] = useState([]);
   const [countItems, setCountItems] = useState(0);
+  const { cartItem } = useContext(CartContext);
 
   const addToList = (item) => {
     const isItemInList = listItems.some((listItem) => listItem.id === item.id);
