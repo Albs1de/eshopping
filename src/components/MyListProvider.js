@@ -17,12 +17,12 @@ export const ListProvider = ({ children }) => {
       // setCountAmount(countAmount + 1);
       setListItems([...listItems, { ...item, count }]);
     } else {
-      setCountAmount(countAmount + 1);
+      setCountItems(countItems + 1);
       setListItems((listItem) =>
         listItem.id === item.id
           ? {
               ...listItem,
-              count: listItem.count,
+              count: listItem.count + 1,
             }
           : listItem
       );
