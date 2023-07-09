@@ -72,7 +72,6 @@ const Homepage = () => {
             Eintragen
           </button>
         </div>
-
         <div className="flex flex-row  ">
           <div className="ml-2 py-5">
             {" "}
