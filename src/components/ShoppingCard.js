@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { CartContext } from "./ShoppingCardProvider"; // Context für den Einkaufswagen
 import { ListContext } from "./MyListProvider"; // Context für die persönliche Liste
-import { MdOutlineFavoriteBorder } from "react-icons/md";
+import { BsBookmark } from "react-icons/bs";
 
 // Dies ist die Komponente für einzelne Shopping Cards, die in der ShoppingCardList angezeigt werden.
 // Sie nimmt verschiedene Props an, darunter title, description, price, id usw.
@@ -46,7 +46,7 @@ const ShoppingCard = ({
               addToList({ title, description, price, id, onClick, image })
             }
           >
-            <MdOutlineFavoriteBorder />
+            <BsBookmark />
           </button>
 
           {/* Button zum Kaufen / Hinzufügen des Artikels zum Warenkorb */}
