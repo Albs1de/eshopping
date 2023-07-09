@@ -40,7 +40,7 @@ const ShoppingCard = ({
         <div className="flex flex-row">
           {/* Button zum Hinzufügen des Artikels zur persönlichen Liste */}
           <button
-            className="btn btn-square mr-3 btn-xs text-xs"
+            className="btn btn-square mr-3 btn-s mx-2 my-0  text-xs"
             disabled={isInList}
             onClick={() =>
               addToList({ title, description, price, id, onClick, image })
@@ -52,7 +52,7 @@ const ShoppingCard = ({
           {/* Button zum Kaufen / Hinzufügen des Artikels zum Warenkorb */}
           <div className="card-actions justify-end">
             <button
-              className="btn btn-primary  -mt-0 px-2 py-1  text-xs btn-xs"
+              className="btn btn-primary  -mt-0 px-4 py-1  text-xs btn-s"
               onClick={onClick}
             >
               Buy
