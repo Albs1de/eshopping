@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import firstImage from "../assets/firstImage.jpg";
-import blackWhite from "../assets/blackWhite.jpg";
 import ShoppingCardList from "../components/ShoppingCardList";
 const Homepage = () => {
   const [showShoppingList, setShowShoppingList] = useState(false);
