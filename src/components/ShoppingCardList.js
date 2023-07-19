@@ -134,26 +134,35 @@ const ShoppingCardList = () => {
   };
 
   return (
-    <div className="flex flex-wrap justify-center ">
-      <div>
+    <div className="flex flex-wrap  justify-center ">
+      <div className="flex flex-wrap justify-center ">
         <button
-          className="btn-sort btn m-2 lg:mx-1"
+          className="btn-sort btn  my-1 lg:mx-1"
           onClick={sortItemsFromAtoZ}
         >
           Sort Items from A to Z
         </button>
-        <button className="btn-sort  btn lg:mx-1" onClick={sortItemsFromZtoA}>
+        <button
+          className="btn-sort  btn my-1 lg:mx-1"
+          onClick={sortItemsFromZtoA}
+        >
           Sort Items from Z to A
         </button>
-        <button className="btn-sort  btn lg:mx-1" onClick={sortItemsPriceXtoY}>
+        <button
+          className="btn-sort  btn my-1 lg:mx-1"
+          onClick={sortItemsPriceXtoY}
+        >
           Sort Items price X to Y
         </button>
-        <button className="btn-sort  btn lg:mx-1" onClick={sortItemsPriceYtoA}>
+        <button
+          className="btn-sort  btn my-1 lg:mx-1"
+          onClick={sortItemsPriceYtoA}
+        >
           Sort Items price Y to X
         </button>
       </div>
 
-      <div className="flex flex-wrap justify-center lg:grid lg:grid-cols-2">
+      <div className="flex flex-wrap justify-center  lg:grid lg:grid-cols-2">
         {shoppingItems.map((item) => {
           return (
             <div key={item.id} className="sm:mx-1 sm:my-1">
