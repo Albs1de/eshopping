@@ -35,15 +35,15 @@ const Homepage = () => {
         </p>
         <div className="flex items-center justify-center">
           <button
-            className="ml-2 px-2 py-2 bg-black text-white rounded w-20"
+            className="ml-2 mt-10 px-2 py-2.5 bg-black text-white rounded w-20"
             type="submit"
           >
-            Jetzt beitreten
+            Beitreten
           </button>
         </div>
       </div>
       <div className="bg-gray-200 p-10 w-full flex flex-col items-center text-center mx-20">
-        <h2 className="text-lg my-2 font-bold">Bestsellers</h2>
+        <h2 className="text-2xl my-2 font-bold">Bestsellers</h2>
         <p className="text-base my-2 text-slate-500 ">
           Erleben Sie die Raffinesse unserer sorgfältig kuratierten Kollektion
           hochwertiger Kleidungsstücke. Verwöhnen Sie sich in Stil und Eleganz
@@ -58,7 +58,7 @@ const Homepage = () => {
         </button>
       </div>
       <div className="bg-white w-full flex flex-col items-center">
-        <p className="text-lg">Sei immer up to date und trage dich ein</p>
+        <p className="text-lg mt-5">Sei immer up to date und trage dich ein</p>
         <div className="flex flex-row my-4 items-center">
           <input
             className="rounded px-4 py-2 "
