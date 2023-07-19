@@ -134,30 +134,21 @@ const ShoppingCardList = () => {
   };
 
   return (
-    <div className="flex flex-wrap justify-center">
+    <div className="flex flex-wrap justify-center ">
       <div>
         <button
-          className="btn-sort btn-outline btn-primary m-2"
+          className="btn-sort btn m-2 lg:mx-1"
           onClick={sortItemsFromAtoZ}
         >
           Sort Items from A to Z
         </button>
-        <button
-          className="btn-sort  btn-accent btn-outline"
-          onClick={sortItemsFromZtoA}
-        >
+        <button className="btn-sort  btn lg:mx-1" onClick={sortItemsFromZtoA}>
           Sort Items from Z to A
         </button>
-        <button
-          className="btn-sort  btn-accent btn-outline"
-          onClick={sortItemsPriceXtoY}
-        >
+        <button className="btn-sort  btn lg:mx-1" onClick={sortItemsPriceXtoY}>
           Sort Items price X to Y
         </button>
-        <button
-          className="btn-sort  btn-accent btn-outline"
-          onClick={sortItemsPriceYtoA}
-        >
+        <button className="btn-sort  btn lg:mx-1" onClick={sortItemsPriceYtoA}>
           Sort Items price Y to X
         </button>
       </div>
