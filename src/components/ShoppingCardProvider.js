@@ -40,7 +40,7 @@ export const CartProvider = ({ children }) => {
       );
     }
   };
-  const deleteFromCart = (item) => {
+  const decreaseAmount = (item) => {
     const isItemInCart = cartItem.some((cartItem) => cartItem.id === item.id);
     if (isItemInCart) {
       setCartItem(
@@ -55,6 +55,29 @@ export const CartProvider = ({ children }) => {
       );
     }
   };
+
+  const deleteFromCart = (item) => {
+    const isItemInCart = cartItem.some((cartItem) => cartItem.id === item.id);
+
+    if (isItemInCart) {
+      const itemToDelete = cartItem.find((cartItem) => cartItem.id === item.id);
+      if (itemToDelete.count > 1) {
+        setCartItem(
+          cartItem.map((cartItem) =>
+            cartItem.id === item.id
+              ? {
+                  ...cartItem,
+                  count: cartItem.count - 1,
+                }
+              : cartItem
+          )
+        );
+      } else {
+        setCartItem(cartItem.filter((cartItem) => cartItem.id !== item.id));
+      }
+    }
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -63,6 +86,7 @@ export const CartProvider = ({ children }) => {
         countAmount,
         totalPrice,
         setCountAmount,
+        decreaseAmount,
         deleteFromCart,
       }}
     >

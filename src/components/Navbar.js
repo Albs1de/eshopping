@@ -2,7 +2,8 @@ import { useContext } from "react";
 import { CartContext } from "./ShoppingCardProvider";
 import { Link } from "react-router-dom";
 const Navbar = () => {
-  const { cartItem, countAmount, totalPrice } = useContext(CartContext);
+  const { cartItem, countAmount, totalPrice, deleteFromCart } =
+    useContext(CartContext);
 
   return (
     <div className="navbar bg-base-100">
@@ -53,6 +54,19 @@ const Navbar = () => {
                     <p>{item.description}</p>
                     <p> Anzahl: {item.count}</p>
                     <p> Preis: {item.price}€</p>
+                    <button
+                      className="btn btn-primary -mt-0"
+                      onClick={() =>
+                        deleteFromCart({
+                          title: item.title,
+                          description: item.description,
+                          price: item.price,
+                          id: item.id,
+                        })
+                      }
+                    >
+                      -
+                    </button>
                   </div>
                 );
               })}

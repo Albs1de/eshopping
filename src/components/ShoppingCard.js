@@ -13,8 +13,9 @@ const ShoppingCard = ({
   onClick,
   image,
   icon,
+  deleteHandler,
 }) => {
-  const { cartItem, deleteFromCart } = useContext(CartContext); // Zugriff auf den Warenkorb über den Context
+  const { cartItem, decreaseAmount } = useContext(CartContext); // Zugriff auf den Warenkorb über den Context
   const { addToList, listItems } = useContext(ListContext); // Zugriff auf die persönliche Liste über den Context
 
   // Finden Sie die Anzahl des Artikels im Warenkorb
@@ -54,7 +55,7 @@ const ShoppingCard = ({
             <button
               className="btn btn-primary -mt-0"
               onClick={() =>
-                deleteFromCart({
+                decreaseAmount({
                   title,
                   description,
                   price,
