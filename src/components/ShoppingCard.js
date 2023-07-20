@@ -14,7 +14,7 @@ const ShoppingCard = ({
   image,
   icon,
 }) => {
-  const { cartItem } = useContext(CartContext); // Zugriff auf den Warenkorb über den Context
+  const { cartItem, deleteFromCart } = useContext(CartContext); // Zugriff auf den Warenkorb über den Context
   const { addToList, listItems } = useContext(ListContext); // Zugriff auf die persönliche Liste über den Context
 
   // Finden Sie die Anzahl des Artikels im Warenkorb
@@ -51,6 +51,22 @@ const ShoppingCard = ({
 
           {/* Button zum Kaufen / Hinzufügen des Artikels zum Warenkorb */}
           <div className="card-actions justify-end">
+            <button
+              className="btn btn-primary -mt-0"
+              onClick={() =>
+                deleteFromCart({
+                  title,
+                  description,
+                  price,
+                  id,
+                  onClick,
+                  image,
+                })
+              }
+            >
+              -
+            </button>
+
             <button
               className="btn btn-primary  -mt-0 px-4 py-1  text-xs btn-s"
               onClick={onClick}

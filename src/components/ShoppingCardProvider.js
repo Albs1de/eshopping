@@ -40,6 +40,21 @@ export const CartProvider = ({ children }) => {
       );
     }
   };
+  const deleteFromCart = (item) => {
+    const isItemInCart = cartItem.some((cartItem) => cartItem.id === item.id);
+    if (isItemInCart) {
+      setCartItem(
+        cartItem.map((cartItem) =>
+          cartItem.id === item.id && cartItem.count > 0
+            ? {
+                ...cartItem,
+                count: cartItem.count - 1,
+              }
+            : cartItem
+        )
+      );
+    }
+  };
   return (
     <CartContext.Provider
       value={{
@@ -48,6 +63,7 @@ export const CartProvider = ({ children }) => {
         countAmount,
         totalPrice,
         setCountAmount,
+        deleteFromCart,
       }}
     >
       {children}

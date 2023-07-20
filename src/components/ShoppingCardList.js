@@ -12,7 +12,7 @@ import hatImage from "../assets/hat.jpg";
 import { AiOutlineHeart } from "react-icons/ai";
 
 const ShoppingCardList = () => {
-  const { addToCart } = useContext(CartContext);
+  const { addToCart, deleteFromCart } = useContext(CartContext);
 
   const [shoppingItems, setShoppingItems] = useState([
     {
@@ -176,6 +176,18 @@ const ShoppingCardList = () => {
                 icon={item.icon}
                 onClick={() =>
                   addToCart({
+                    id: item.id,
+                    title: item.title,
+                    description: item.description,
+                    price: item.price,
+                    count: item.count,
+                    originalPrice: item.originalPrice,
+                    image: item.image,
+                    icon: item.icon,
+                  })
+                }
+                deleteHandler={() =>
+                  deleteFromCart({
                     id: item.id,
                     title: item.title,
                     description: item.description,
