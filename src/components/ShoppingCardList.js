@@ -162,7 +162,7 @@ const ShoppingCardList = () => {
         </button>
       </div>
 
-      <div className="flex flex-wrap justify-center  lg:grid lg:grid-cols-2">
+      <div className="flex flex-wrap lg:grid lg:grid-cols-3">
         {shoppingItems.map((item) => {
           return (
             <div key={item.id} className="sm:mx-1 sm:my-1">

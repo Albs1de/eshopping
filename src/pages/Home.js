@@ -6,7 +6,7 @@ const Homepage = () => {
 
   return (
     <div className="bg-gray-200 p-2 flex flex-col items-center">
-      <div className="bg-gray-200 p-10 flex flex-col items-center">
+      <div className="bg-gray-200  flex flex-col items-center">
         {!showShoppingList && (
           <>
             <img alt="first Clothing" src={firstImage} className="mx-auto" />
