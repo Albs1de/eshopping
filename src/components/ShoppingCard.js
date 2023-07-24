@@ -38,10 +38,11 @@ const ShoppingCard = ({
         <p className="-mb-1 -mt-3">Anzahl: {countInCart}</p>
 
         <p className="-mb-1 -mt-1">{price} €</p>
-        <div className="flex flex-row">
-          {/* Button zum Hinzufügen des Artikels zur persönlichen Liste */}
+
+        {/* Button zum Kaufen / Hinzufügen des Artikels zum Warenkorb */}
+        <div className="card-actions flex flex-row flex-nowrap">
           <button
-            className="btn btn-square mr-3 btn-s mx-2 my-0  text-xs"
+            className="btn btn-square btn-s   text-xs"
             disabled={isInList}
             onClick={() =>
               addToList({ title, description, price, id, onClick, image })
@@ -49,32 +50,28 @@ const ShoppingCard = ({
           >
             <BsBookmark />
           </button>
+          <button
+            className="btn btn-primary "
+            onClick={() =>
+              decreaseAmount({
+                title,
+                description,
+                price,
+                id,
+                onClick,
+                image,
+              })
+            }
+          >
+            -
+          </button>
 
-          {/* Button zum Kaufen / Hinzufügen des Artikels zum Warenkorb */}
-          <div className="card-actions justify-end">
-            <button
-              className="btn btn-primary -mt-0"
-              onClick={() =>
-                decreaseAmount({
-                  title,
-                  description,
-                  price,
-                  id,
-                  onClick,
-                  image,
-                })
-              }
-            >
-              -
-            </button>
-
-            <button
-              className="btn btn-primary  -mt-0 px-4 py-1  text-xs btn-s"
-              onClick={onClick}
-            >
-              Buy
-            </button>
-          </div>
+          <button
+            className="btn btn-primary    text-xs btn-s"
+            onClick={onClick}
+          >
+            Buy
+          </button>
         </div>
       </div>
     </div>
