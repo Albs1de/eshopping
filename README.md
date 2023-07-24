@@ -8,21 +8,21 @@ Um das Projekt lokal zu installieren, folgen Sie bitte den unten aufgeführten S
 
 1. Klone das Repository auf Ihren lokalen Computer
 
-https://github.com/Albs1de/eshopping.git
+   https://github.com/Albs1de/eshopping.git
 
 2. Wechseln Sie in das Projektverzeichnis
 
-cd eShopping
+   cd eShopping
 
 3. Installieren Sie die Abhängigkeiten mit npm oder yarn
 
-npm install oder yarn install
+   npm install oder yarn install
 
 4. Starten Sie das Projekt
 
-npm start oder yarn start
+   npm start oder yarn start
 
-Die Anwendung sollte nun auf `http://localhost:3000` laufen.
+   Die Anwendung sollte nun auf `http://localhost:3000` laufen.
 
 ## Verwendung
 
