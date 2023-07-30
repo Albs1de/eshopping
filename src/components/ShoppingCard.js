@@ -26,18 +26,20 @@ const ShoppingCard = ({
 
   // Die Rückgabefunktion rendert die ShoppingCard Komponente mit den übergebenen Daten.
   return (
-    <div className="card my-4 h-40 w-full  card-side  bg-base-100 shadow-xl">
+    <div className="card my-4 h-40 w-full  card-side  bg-cartbg shadow-xl">
       {/* Hier werden das Bild und der Titel des Artikels angezeigt */}
       <figure>
         <img className="-mt-2 object-hover" src={image} alt="Shoes" />
       </figure>
       <div className="card-body w-full h-24 text-sm ">
-        <h2 className="card-title -mb-5 -mt-5">{title}</h2>
-        <p className="mt-4 mb-1">{description}</p>
+        <h2 className="card-title -mb-5 -mt-5 font-bold text-carttext">
+          {title}
+        </h2>
+        <p className="mt-4 mb-1 text-carttext">{description}</p>
 
-        <p className="-mb-1 -mt-3">Anzahl: {countInCart}</p>
+        <p className="-mb-1 -mt-3 text-carttext">Anzahl: {countInCart}</p>
 
-        <p className="-mb-1 -mt-1">{price} €</p>
+        <p className="-mb-1 -mt-1 text-carttext font-bold">{price} €</p>
 
         {/* Button zum Kaufen / Hinzufügen des Artikels zum Warenkorb */}
         <div className="card-actions flex flex-row flex-nowrap">
@@ -51,7 +53,7 @@ const ShoppingCard = ({
             <BsBookmark />
           </button>
           <button
-            className="btn btn-primary "
+            className="btn bg-btncolor "
             onClick={() =>
               decreaseAmount({
                 title,
@@ -67,7 +69,7 @@ const ShoppingCard = ({
           </button>
 
           <button
-            className="btn btn-primary    text-xs btn-s"
+            className="btn bg-btnprimary text-white    text-xs btn-s"
             onClick={onClick}
           >
             Buy

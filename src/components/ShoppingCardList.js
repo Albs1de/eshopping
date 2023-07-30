@@ -13,6 +13,29 @@ import { AiOutlineHeart } from "react-icons/ai";
 
 const ShoppingCardList = () => {
   const { addToCart, decreaseAmount } = useContext(CartContext);
+  const [selectedOption, setSelectedOption] = useState("Sortieren nach...");
+
+  /* ... */
+
+  const handleSortChange = (event) => {
+    setSelectedOption(event.target.value);
+    switch (event.target.value) {
+      case "Sort Items from A to Z":
+        sortItemsFromAtoZ();
+        break;
+      case "Sort Items from Z to A":
+        sortItemsFromZtoA();
+        break;
+      case "Sort Items price X to Y":
+        sortItemsPriceXtoY();
+        break;
+      case "Sort Items price Y to X":
+        sortItemsPriceYtoA();
+        break;
+      default:
+        break;
+    }
+  };
 
   const [shoppingItems, setShoppingItems] = useState([
     {
@@ -136,30 +159,17 @@ const ShoppingCardList = () => {
   return (
     <div className="flex flex-wrap  justify-center ">
       <div className="flex flex-wrap justify-center ">
-        <button
-          className="btn-sort btn  my-1 lg:mx-1"
-          onClick={sortItemsFromAtoZ}
+        <select
+          id="sortOptions"
+          value={selectedOption}
+          onChange={handleSortChange}
         >
-          Sort Items from A to Z
-        </button>
-        <button
-          className="btn-sort  btn my-1 lg:mx-1"
-          onClick={sortItemsFromZtoA}
-        >
-          Sort Items from Z to A
-        </button>
-        <button
-          className="btn-sort  btn my-1 lg:mx-1"
-          onClick={sortItemsPriceXtoY}
-        >
-          Sort Items price X to Y
-        </button>
-        <button
-          className="btn-sort  btn my-1 lg:mx-1"
-          onClick={sortItemsPriceYtoA}
-        >
-          Sort Items price Y to X
-        </button>
+          <option disabled>Sortieren nach...</option>
+          <option>Sort Items from A to Z</option>
+          <option>Sort Items from Z to A</option>
+          <option>Sort Items price X to Y</option>
+          <option>Sort Items price Y to X</option>
+        </select>
       </div>
 
       <div className="flex flex-wrap md:grid md:grid-cols-1 lg:grid lg:grid-cols-3 xl:grid xl:grid-cols-3">

@@ -9,14 +9,17 @@ const Navbar = () => {
     useContext(CartContext);
 
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-primaryBlue">
       <div className="flex-1">
-        <Link to="/" className="btn btn-ghost normal-case text-xl">
+        <Link to="/" className="btn btn-ghost normal-case text-xl text-white">
           eShopping
         </Link>
       </div>
       <div className="flex-1">
-        <Link to="/mylist" className="btn btn-ghost normal-case text-xl">
+        <Link
+          to="/mylist"
+          className="btn btn-ghost normal-case text-xl text-white"
+        >
           MyList
         </Link>
       </div>
