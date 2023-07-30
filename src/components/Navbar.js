@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { CartContext } from "./ShoppingCardProvider";
 import { Link } from "react-router-dom";
-import SignIn from "./auth/SignIn";
-import SignUp from "./auth/SignUp";
+import { BiSolidUser } from "react-icons/bi";
+import AuthDetail from "./auth/AuthDetails";
 
 const Navbar = () => {
   const { cartItem, countAmount, totalPrice, deleteFromCart } =
@@ -80,30 +80,18 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        <div className="dropdown dropdown-end">
+        <div className="dropdown dropdown-end justify-center items-center">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-            <div className="w-10 rounded-full">
-              <img
-                alt="profile"
-                src="/images/stock/photo-1534528741775-53994a69daeb.jpg"
-              />
+            <div className="rounded-full">
+              <BiSolidUser size={25} />
             </div>
           </label>
-          <ul
+          <div
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <li>
-              <SignIn />
-              <SignUp />
-            </li>
-            <li>
-              <a href="/">Settings</a>
-            </li>
-            <li>
-              <a href="/">Logout</a>
-            </li>
-          </ul>
+            <AuthDetail />
+          </div>
         </div>
       </div>
     </div>
