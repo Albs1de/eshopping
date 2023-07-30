@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import firstImage from "../assets/firstImage.jpg";
 import ShoppingCardList from "../components/ShoppingCardList";
 const Homepage = () => {
   const [showShoppingList, setShowShoppingList] = useState(false);
@@ -9,7 +8,6 @@ const Homepage = () => {
       <div className="bg-gray-200  flex flex-col items-center">
         {!showShoppingList && (
           <>
-            <img alt="first Clothing" src={firstImage} className="mx-auto" />
             <h1 className="text-xl font-bold my-4">Willkommen auf eShopping</h1>
             <h2 className="text-lg my-2">Wir verkaufen hochwertige Kleidung</h2>
             <p className="text-base my-2">
