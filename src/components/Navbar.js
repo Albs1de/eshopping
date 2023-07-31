@@ -27,7 +27,7 @@ const Navbar = () => {
       <div className="flex-none">
         <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle ">
-            <div className="indicator">
+            <div className="indicator text-cartbg">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -85,7 +85,7 @@ const Navbar = () => {
         </div>
         <div className="dropdown dropdown-end justify-center items-center">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-            <div className="rounded-full">
+            <div className="rounded-full text-cartbg">
               <BiSolidUser size={25} />
             </div>
           </label>
