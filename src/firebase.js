@@ -3,12 +3,12 @@ import { initializeApp } from "firebase/app";
 import "firebase/auth";
 import { getAuth } from "firebase/auth";
 const firebaseConfig = {
-  apiKey: "AIzaSyDi9RNVCnSBb5Z3ej82T16-greRJzmUFk4",
-  authDomain: "eshopping-2f50a.firebaseapp.com",
-  projectId: "eshopping-2f50a",
-  storageBucket: "eshopping-2f50a.appspot.com",
-  messagingSenderId: "469335454417",
-  appId: "1:469335454417:web:56ca625890178e795e8bf0",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
