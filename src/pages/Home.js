@@ -9,13 +9,13 @@ const Homepage = () => {
         {!showShoppingList && (
           <>
             <h1 className="text-xl font-bold my-4">Willkommen auf eShopping</h1>
+            <div className="flex flex-col text-center">
             <h2 className="text-lg my-2">Wir verkaufen hochwertige Kleidung</h2>
             <p className="text-base my-2">
-              Bei eShopping setzen wir auf Qualität und Langlebigkeit...
-              {/* Der restliche Text wurde hier ausgelassen, um Platz zu sparen. */}
+              Bei eShopping setzen wir auf Qualität und Langlebigkeit
             </p>
-            <button
-              className="mt-4 px-4 py-2 bg-black text-white rounded"
+           </div> <button
+              className="mb-6  px-6 py-2.5 bg-primaryBlue   text-white rounded"
               onClick={() => setShowShoppingList(true)}
             >
               Shoppen
@@ -26,9 +26,9 @@ const Homepage = () => {
         {showShoppingList && <ShoppingCardList />}
       </div>
       <div className="bg-white w-full p-10 flex flex-col items-center text-center ">
-        <h1 className="text-xl font-bold my-2">Lieben Sie unseren Stil?</h1>
+        <h1 className="text-xl font-bold my-2">Achtung Rabatte!</h1>
         <p>
-          Schließen Sie sich unserem exklusiven Club an, profitieren Sie von 40%
+          Schließen Sie sich unserem exklusiven Club an, profitieren Sie von <span className="font-bold">40% </span>
           Rabatt und erhalten Sie ein Bonusgeschenk mit jeder Bestellung
         </p>
         <div className="flex items-center justify-center">
